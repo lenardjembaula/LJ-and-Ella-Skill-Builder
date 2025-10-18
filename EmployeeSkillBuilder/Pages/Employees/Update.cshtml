@@ -1,0 +1,39 @@
+﻿@page 
+@model EmployeeSkillBuilder.Pages.Employees.UpdateModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <input type="hidden" asp-for="EmployeeToUpdate.id" />
+
+    <div class="mb-3">
+        <label asp-for="EmployeeToUpdate.first_name" class="form-label">First name:</label>
+        <input asp-for="EmployeeToUpdate.first_name" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmployeeToUpdate.last_name" class="form-label">Last name:</label>
+        <input asp-for="EmployeeToUpdate.last_name" type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmployeeToUpdate.email_address" class="form-label">Email address:</label>
+        <input asp-for="EmployeeToUpdate.email_address" type="email" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmployeeToUpdate.date_of_birth" class="form-label">Date of Birth:</label>
+        <input asp-for="EmployeeToUpdate.date_of_birth" type="date" class="form-control">
+    </div>
+
+    <a asp-page="/Employees/Index" class="btn btn-danger">Back</a>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,32 @@
+﻿@page 
+@model EmployeeSkillBuilder.Pages.Employees.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Are you sure you want to delete this record?</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <input type="hidden" asp-for="EmployeeToDelete.id" />
+
+    <div class="mb-3">
+        <label asp-for="EmployeeToDelete.first_name" class="form-label">First name:</label>
+        <input asp-for="EmployeeToDelete.first_name" type="text" class="form-control" disabled>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmployeeToDelete.last_name" class="form-label">Last name:</label>
+        <input asp-for="EmployeeToDelete.last_name" type="text" class="form-control" disabled>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmployeeToDelete.email_address" class="form-label">Email address:</label>
+        <input asp-for="EmployeeToDelete.email_address" type="email" class="form-control" disabled>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmployeeToDelete.date_of_birth" class="form-label">Date of Birth:</label>
+        <input asp-for="EmployeeToDelete.date_of_birth" type="date" class="form-control" disabled>
+    </div>
+
+    <a asp-page="/Employees/Index" class="btn btn-primary">Back</a>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>

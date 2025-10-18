@@ -1,0 +1,35 @@
+﻿@page 
+@model EmployeeSkillBuilder.Pages.Employees.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="get">
+    <div asp-validation-summary="ModelOnly"></div>
+    <input type="text" asp-for="EmployeeDetails.id" disabled/>
+
+    <div class="mb-3">
+        <label asp-for="EmployeeDetails.first_name" class="form-label">First name:</label>
+        <input asp-for="EmployeeDetails.first_name" type="text" class="form-control" disabled>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmployeeDetails.last_name" class="form-label">Last name:</label>
+        <input asp-for="EmployeeDetails.last_name" type="text" class="form-control" disabled>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmployeeDetails.email_address" class="form-label">Email address:</label>
+        <input asp-for="EmployeeDetails.email_address" type="email" class="form-control" disabled>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmployeeDetails.date_of_birth" class="form-label">Date of Birth:</label>
+        <input asp-for="EmployeeDetails.date_of_birth" type="date" class="form-control" disabled>
+    </div>
+    <div class="mb-3">
+        <label asp-for="EmployeeDetails.date_modified" class="form-label">Date Modified:</label>
+        <input asp-for="EmployeeDetails.date_modified" type="date" class="form-control" disabled>
+    </div>
+
+    <a asp-page="/Employees/Index" class="btn btn-primary">Back</a>
+</form>
