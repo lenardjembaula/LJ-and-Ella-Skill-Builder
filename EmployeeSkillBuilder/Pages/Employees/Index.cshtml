@@ -14,7 +14,6 @@
         <table class="table table-bordered table-striped table-hover">
             <thead class="table-dark">
                 <tr>
-                    <th>ID</th>
                     <th>Full Name</th>
                     <th>Email Address</th>
                     <th>Date of Birth</th>
@@ -28,7 +27,6 @@
                     foreach (var employee in Model.EmployeeList)
                     {
                         <tr>
-                            <td>@employee.id</td>
                             <td>@employee.full_name</td>
                             <td>@employee.email_address</td>
                             <td>@employee.date_of_birth_display</td>
