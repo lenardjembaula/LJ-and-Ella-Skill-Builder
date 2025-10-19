@@ -19,6 +19,8 @@ namespace EmployeeSkillBuilder.Pages.Skills
 
         public async Task<IActionResult> OnPostAsync()
         {
+            SkillToCreate.created_at = DateTime.Now;
+
             var json = JsonSerializer.Serialize(SkillToCreate);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
