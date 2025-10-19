@@ -4,10 +4,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Text;
 using System.Text.Json;
 
-namespace EmployeeSkillBuilder.Pages.Employees
+namespace EmployeeSkillBuilder.Pages.Skills
 {
     public class CreateModel : PageModel
     {
+        [BindProperty]
+        public Skill SkillToCreate { get; set; } = new Skill();
         private readonly HttpClient _client;
 
         public CreateModel(IHttpClientFactory factory)
@@ -15,21 +17,15 @@ namespace EmployeeSkillBuilder.Pages.Employees
             _client = factory.CreateClient("Supabase");
         }
 
-        [BindProperty]
-        public Employee EmployeeToCreate { get; set; } = new Employee();
-
         public async Task<IActionResult> OnPostAsync()
-        {   
-            var json = JsonSerializer.Serialize(EmployeeToCreate);
+        {
+            var json = JsonSerializer.Serialize(SkillToCreate);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            // Yung employee dito pangalan lang to ng table kung saan mo isasave yung data
-            var response = await _client.PostAsync("employee", content);
+            var response = await _client.PostAsync("skill", content);
 
             if (response.IsSuccessStatusCode)
-            {
-                return RedirectToPage("/Employees/Index");
-            }
+                return RedirectToPage("/Skills/Index");
 
             return Page();
         }

@@ -1,0 +1,46 @@
+﻿@page
+@model EmployeeSkillBuilder.Pages.Skills.IndexModel
+@{
+    ViewData["Title"] = "Skill List";
+}
+
+<div class="container mt-4 skills-table">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>@ViewData["Title"]</h2>
+        <a asp-page="Create" class="btn btn-primary btn-sm">+</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-dark">
+                <tr class="text-center">
+                    <th>Skill Name</th>
+                    <th>Description</th>
+                    <th>Date Created</th>
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+            <tbody>
+                @if (Model.SkillList != null && Model.SkillList.Any())
+                {
+                    foreach (var skill in Model.SkillList)
+                    {
+                        <tr class="text-center">
+                            <td>@skill.skill_name</td>
+                            <td>@skill.description</td>
+                            <td>@skill.created_at_display</td>
+                            <td>
+                                <a class="btn btn-primary btn-sm me-1" asp-page="#" asp-route-id="#">Update</a>
+                                <a class="btn btn-secondary btn-sm me-1" asp-page="#" asp-route-id="#">Details</a>
+                                <a class="btn btn-danger btn-sm me-1" asp-page="#" asp-route-id="#">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

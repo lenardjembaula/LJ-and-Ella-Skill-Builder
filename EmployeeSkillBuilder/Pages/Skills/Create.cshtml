@@ -1,0 +1,26 @@
+﻿@page
+@model EmployeeSkillBuilder.Pages.Skills.CreateModel
+@{
+    ViewData["Title"] = "Create Skill";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="SkillToCreate.skill_name" class="form-label">Skill name:</label>
+        <input asp-for="SkillToCreate.skill_name" type="text" class="form-control" />
+        <span asp-validation-for="SkillToCreate.skill_name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SkillToCreate.description" class="form-label">Description:</label>
+        <input asp-for="SkillToCreate.description" type="text" class="form-control" />
+        <span asp-validation-for="SkillToCreate.description" class="text-danger"></span>
+    </div>
+
+    <hr />
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Create</button>
+        <a asp-page="/Skills/Index" class="btn btn-danger">Cancel</a>
+    </div>
+</form>

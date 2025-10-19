@@ -1,7 +1,7 @@
 ﻿@page
 @model EmployeeSkillBuilder.Pages.Employees.CreateModel
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Employee";
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -29,6 +29,7 @@
         <span asp-validation-for="EmployeeToCreate.date_of_birth" class="text-danger"></span>
     </div>
 
+    <hr />
     <button type="submit" class="btn btn-primary">Create</button>
-    <a asp-page="./Index" class="btn btn-danger">Cancel</a>
+    <a asp-page="/Employees/Index" class="btn btn-danger">Cancel</a>
 </form>
