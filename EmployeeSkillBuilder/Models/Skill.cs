@@ -25,6 +25,8 @@ namespace EmployeeSkillBuilder.Models
         public DateTime? created_at { get; set; }
 
 
+        [NotMapped]
+        [JsonIgnore]
         public string created_at_display =>
             created_at.HasValue ? created_at.Value.ToString("MMMM dd, yyyy") : "N/A";
 
