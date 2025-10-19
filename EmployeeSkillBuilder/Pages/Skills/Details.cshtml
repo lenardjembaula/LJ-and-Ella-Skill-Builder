@@ -1,0 +1,26 @@
+﻿@page
+@model EmployeeSkillBuilder.Pages.Skills.DetailsModel
+@{
+    ViewData["Title"] = "Skill Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="SelectedSkill.skill_name" class="form-label">Skill name:</label>
+        <input asp-for="SelectedSkill.skill_name" type="text" class="form-control" disabled />
+        <span asp-validation-for="SelectedSkill.skill_name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SelectedSkill.description" class="form-label">Description:</label>
+        <input asp-for="SelectedSkill.description" type="text" class="form-control" disabled />
+        <span asp-validation-for="SelectedSkill.description" class="text-danger"></span>
+    </div>
+
+    <hr />
+    <div class="form-group">
+        <a asp-page="/Skills/Index" class="btn btn-primary">Back</a>
+    </div>
+</form>

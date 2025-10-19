@@ -31,9 +31,9 @@
                             <td>@skill.description</td>
                             <td>@skill.created_at_display</td>
                             <td>
-                                <a class="btn btn-primary btn-sm me-1" asp-page="#" asp-route-id="#">Update</a>
-                                <a class="btn btn-secondary btn-sm me-1" asp-page="#" asp-route-id="#">Details</a>
-                                <a class="btn btn-danger btn-sm me-1" asp-page="#" asp-route-id="#">Delete</a>
+                                <a class="btn btn-primary btn-sm me-1" asp-page="Update" asp-route-id="@skill.ID">Update</a>
+                                <a class="btn btn-secondary btn-sm me-1" asp-page="Details" asp-route-id="@skill.ID">Details</a>
+                                <a class="btn btn-danger btn-sm me-1" asp-page="Delete" asp-route-id="@skill.ID">Delete</a>
                             </td>
                         </tr>
                     }

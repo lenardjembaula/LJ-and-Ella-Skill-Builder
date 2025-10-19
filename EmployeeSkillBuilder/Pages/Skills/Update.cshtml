@@ -1,0 +1,27 @@
+﻿@page
+@model EmployeeSkillBuilder.Pages.Skills.UpdateModel
+@{
+    ViewData["Title"] = "Update Skill";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <div class="form-group">
+        <label asp-for="SkillToUpdate.skill_name" class="form-label">Skill name:</label>
+        <input asp-for="SkillToUpdate.skill_name" type="text" class="form-control" />
+        <span asp-validation-for="SkillToUpdate.skill_name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SkillToUpdate.description" class="form-label">Description:</label>
+        <input asp-for="SkillToUpdate.description" type="text" class="form-control" />
+        <span asp-validation-for="SkillToUpdate.description" class="text-danger"></span>
+    </div>
+
+    <hr />
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Create</button>
+        <a asp-page="/Skills/Index" class="btn btn-danger">Cancel</a>
+    </div>
+</form>
